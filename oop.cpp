@@ -53,6 +53,9 @@ public:
 		else
 			std::cout<<Name<<"  Sry! No Promotion for you."<<endl;
 	}
+	void work() {
+		std::cout<<Name << " checking mail and blaclog tasks...!" << std::endl;
+	}
 };
 class Developer :public Employee {
 public:
@@ -64,6 +67,9 @@ public:
 	void fixBug() {
 		std::cout << Name << " fix bug using " << FavProgrammingLanguage << std::endl;
 	}
+	void work() {
+		std::cout << Name << " is writing code in  " << FavProgrammingLanguage << std::endl;
+	}
 };
 class Teacher : public Employee {
 public:
@@ -73,8 +79,11 @@ public:
 		std::cout << Name << " is preparing " << Subject << " lesson" << std::endl;
 	}
 
-	Teacher(const std::string& name, const std::string& company, int age, const std::string& subject)
+	Teacher(string name, string company, int age, string subject)
 		: Employee(name, company, age), Subject(subject) {}
+	void work() {
+		std::cout << Name << " is teaching " <<Subject <<std::endl;
+	}
 };
 
 
@@ -96,14 +105,17 @@ int main() {
 
 	Developer D1 = Developer("Kishan", "YT-KT", 25, "C++");
 
-	D1.fixBug();
-	D1.fixBug();
-	D1.fixBug();
+	/*D1.fixBug();
+	
 
-	D1.AskForPromotion();//class Developer :public Employee {
+	D1.AskForPromotion();//class Developer :public Employee {*/
 
 	Teacher t1= Teacher("John", "School", 30, "Math");
-	t1.PrepareLesson();
+	/*t1.PrepareLesson();*/
+
+
+	D1.work();
+	t1.work();
 
 
 	system("pause>0");
